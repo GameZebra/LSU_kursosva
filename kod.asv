@@ -69,8 +69,6 @@ sys_tf_1_closed = feedback(kpol*sys_tf, 1, -1)
 figure(9)
 step(sys_tf_1_closed), grid on;
 rlocus(sys_tf_1_closed)
-
-
 % зад 4 на ръка се сваля описанието в пространство на състоянията от
 % структурната схема
 
