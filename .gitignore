@@ -1,0 +1,7 @@
+# Ignore backup matlab files
+*.asv
+*.temp
+
+# Ignore Word backup files
+~*
+
