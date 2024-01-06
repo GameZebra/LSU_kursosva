@@ -1,7 +1,75 @@
-# Ignore backup matlab files
+
+# MATLAB
+*.mat
 *.asv
+*.figs
 *.temp
 
-# Ignore Word backup files
+# Simulink
+slprj/
+*.slx.*
+*.slxc
+*.slxc.*
+*.autosave
+
+# Simulink cache
+simulink.cache/
+simulink_generated_blocks.mat
+
+# MATLAB code analyzer files
+*.mexa64
+*.mexw64
+*.mexmaci64
+
+# Compiled MATLAB
+*.p
+*.mex*
+*.ctf
+
+# Simulink logs
+simulink*.log
+
+# Temporary files
+slprj/_sfprj
+slprj/_sfbkup
+slprj/_tmatprj
+
+# Simulink diagnostic files
+*.tmw
+
+# Simulink data files
+*.md5
+*.xlf
+*.harnessresults
+*.xml
+*.merlin
+
+# Other temporary files
+*.bak
+*.scc
+
+# Simulink Stateflow temporary files
+sldv/
+sfprj/
+sfdebug/
+slccprj/
+
+# Simulink slprj temporary files
+slprj/sim_stateflow/
+
+# Simulink generated files
+slprj/simulinkautosave/
+slprj/raccel/
+slprj/mrsdata/
+
+# MATLAB profiler output
+profile_info/
+profile_results/
+
+# MATLAB Simulink Cache
+SimulinkOnramp/
+MATLABCodingOnramp/
+
+# Word backup files
 ~*
 
