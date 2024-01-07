@@ -75,6 +75,50 @@ rlocus(sys_tf_1_closed)
 % структурната схема
 
 
+% Изчисляване на елементите на матричната експонента
+t = 0:0.1:800;
+nt=length(t);
+MeCol1=[]; MeCol2=[]; MeCol3=[]; MeCol4=[]; MeCol5=[];
+
+for k = 1:nt
+    me=expm(A*t(k));
+    MeCol1=[MeCol1 me(:,1)];
+    MeCol2=[MeCol2 me(:,2)];
+    MeCol3=[MeCol3 me(:,3)];
+    MeCol4=[MeCol4 me(:,4)];
+    MeCol5=[MeCol5 me(:,5)];
+end
+
+figure(10)
+plot(t, MeCol1(1,:), 'b', t, MeCol1(2,:),'g', t, MeCol1(3,:), 'r', t, MeCol1(4,:),'c', t, MeCol1(5,:), 'm'), grid on;
+
+figure(11)
+plot(t,MeCol2(1,:), 'b', t, MeCol2(2,:),'g', t, ...
+     MeCol2(3,:), 'r', t, MeCol2(4,:),'c', t, ...
+     MeCol2(5,:), 'm'), grid on;
+
+figure(12)
+plot(t,MeCol3(1,:), 'b', t, MeCol3(2,:),'g', t, ...
+     MeCol3(3,:), 'r', t, MeCol3(4,:),'c', t, ...
+     MeCol3(5,:), 'm'), grid on;
+
+figure(13)
+plot(t,MeCol4(1,:), 'b', t, MeCol4(2,:),'g', t, ...
+     MeCol4(3,:), 'r', t, MeCol4(4,:),'c', t, ...
+     MeCol4(5,:), 'm'), grid on;
+
+figure(14)
+plot(t,MeCol5(1,:), 'b', t, MeCol5(2,:),'g', t, ...
+     MeCol5(3,:), 'r', t, MeCol5(4,:),'c', t, ...
+     MeCol5(5,:), 'm'), grid on;
+
+
+
+
+
+
+
+
 [A1, B1, C1, D1] = linmod('blockshemazatvorena');
 [b1, a1] = ss2tf(A1, B1, C1, D1)
 sys_tfClosed = tf(b1, a1);
