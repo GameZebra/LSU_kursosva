@@ -74,7 +74,7 @@ rlocus(sys_tf_1_closed)
 % зад 4 на ръка се сваля описанието в пространство на състоянията от
 % структурната схема
 
-
+% зад 5
 % Изчисляване на елементите на матричната експонента
 t = 0:0.1:800;
 nt=length(t);
@@ -112,26 +112,27 @@ plot(t,MeCol5(1,:), 'b', t, MeCol5(2,:),'g', t, ...
      MeCol5(3,:), 'r', t, MeCol5(4,:),'c', t, ...
      MeCol5(5,:), 'm'), grid on;
 
+% зад 6
+T0 = 0.0001;
+[numd, dend] = c2dm(num0, den0, T0, 'zoh');
+printsys(numd,dend,'z')
+
+[F,G,Cd,Dd]=c2dm(A,B,C,D,T0,'zoh')
+figure(15)
+dstep(numd, dend, 40)
 
 
+% зад 7
+roots(dend)
+dstep(dend)
+
+% зад 8
+sum(out.Y)/length(out.Y)
+% дисперсия на изходния сигнал
+[nump, denp] = feedback(num0*5,den0,1,1,-1)
+Dy1=covar(nump,denp,1)
+
+% спектрална плътност TODO
 
 
-
-
-
-[A1, B1, C1, D1] = linmod('blockshemazatvorena');
-[b1, a1] = ss2tf(A1, B1, C1, D1)
-sys_tfClosed = tf(b1, a1);
-sys_ssClosed = ss(A1, B1, C1, D1)
-tf(sys_tfClosed)
-%zad1
-step(sys_tf)
-%zad 2 
-%hurwitz(tf(sys_tf));
-nyquist(sys_tf);
-
-%zad 3 da se vzaeme koef ot otvorenata i da plotnem s azlichni stoinosti za
-%otvorenata
-margin(sys_tf)
-%zad 4 linmode
 
