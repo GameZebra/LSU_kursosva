@@ -134,5 +134,18 @@ Dy1=covar(nump,denp,1)
 
 % спектрална плътност TODO
 
-
+% зад 9
+%разпределение 4 от таблицата на типовите разпределения
+tp=15;
+taup=3.5;
+w0=taup/tp;
+l1=-0.77*w0;
+l2=-0.6*w0+j*w0;
+l3 = l2';
+l4=l1*10;
+l5=l1*12;
+polc=[l1 l2 l3 l4 l5];
+Kp=place(A,B,polc);
+L=inv(C*inv(-A+B*Kp)*B);
+[eig(A-B*Kp) polc']
 
